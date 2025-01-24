@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>SignUp</h1>
+                    <h6>Register Yourself!!</h6>
+
+                </div>
+                <form>
+                    <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">First-Name</label>
+                            <input formControlName="firstname" type="text" class="form-control" id="exampleInputPassword1" placeholder="First-Name">
+                            <span class="text-danger" *ngIf="signupForm.controls['firstname'].touched && signupForm.hasError('required','firstname')" >*First-Name is required</span>
+                          </div>
+                          
+                          <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Last-Name</label>
+                            <input formControlName="lastname" type="text" class="form-control" id="exampleInputPassword1" placeholder="Last Name">
+                            <span class="text-danger" *ngIf="signupForm.controls['lastname'].touched && signupForm.hasError('required','lastname')" >*Last-Name is required</span>
+                          </div>
+
+                          <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Address</label>
+                            <input formControlName="address" type="text" class="form-control" id="exampleInputPassword1" placeholder="Address">
+                            <span class="text-danger" *ngIf="signupForm.controls['address'].touched && signupForm.hasError('required','address')" >*Address is required</span>
+                          </div>
+
+                          <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Mobile-No</label>
+                            <input formControlName="mobileno" type="number" class="form-control" id="exampleInputPassword1" placeholder="Mobile-No" maxlength="10">
+                            <span class="text-danger" *ngIf="signupForm.controls['mobileno'].touched && signupForm.hasError('required','mobileno')" >*Mobile-No is required</span>
+                          </div>
+
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Email address</label>
+                          <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email-ID">
+                          <span class="text-danger" *ngIf="signupForm.controls['email'].touched && signupForm.hasError('required','email')" >*Email-Id is required</span>
+                          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Password</label>
+                          <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                          <span class="text-danger" *ngIf="signupForm.controls['password'].touched && signupForm.hasError('required','password')" >*Password is required</span>
+                        </div>
+                        
+                        <button type="submit" [disabled]="!signupForm.valid" class="btn btn-primary mb-2">signUp</button>
+                        
+                      </form>
+                      <a routerLink="/login" style="color: white; margin-top: 10px;">Already Registered ? click to Login!!</a>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
